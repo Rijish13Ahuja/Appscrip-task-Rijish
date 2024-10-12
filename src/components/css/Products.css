@@ -1,0 +1,246 @@
+.filter{
+    width : calc(100% - 192px);
+    height:88px;
+    margin:0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top : 1px solid #E5E5E5;
+    border-bottom : 1px solid #E5E5E5;
+}
+.products {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns default */
+    gap: 20px;
+    width: calc(100% - 300px); /* Adjust product section based on filter width */
+    transition: all 0.3s ease;
+}
+.ico-down img{
+    rotate:90deg
+}
+.showfilter{
+    width:303px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prod-desc{
+    width: 100%;
+    font-size: 14px;
+    line-height: 16.8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#select {
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    padding: 0 10px;
+    line-height: 40px;
+    font-weight: 700;
+    z-index: 3; /* Ensure it opens above the products */
+    position: relative;
+}
+#select option {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    border: none;
+    text-align: right;
+    font-weight: 400;
+    padding: 10px !important;
+}
+#select > option:hover{
+    font-weight: 700;
+
+}
+#filter {
+    width: 300px; /* Default width for the filter sidebar */
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 24px 0 24px 96px;
+    gap: 26px;
+    position: relative; /* Position relative to allow transitions */
+    transition: width 0.3s ease; /* Smooth transition when opening/closing */
+}
+.dnone{
+    display:none
+}
+#filter > span, #filter > div{
+    width:100%;
+}
+#filter > span > span, #filter > div>span{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.costomize {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 26px;
+}
+.filterlogo{
+    display:none
+}
+.costomize > input{
+    width:22px;
+    height:22px;
+    box-sizing: border-box;
+    border : 1px solid black
+}
+.costomize > span, .type-heading > span, #filter >div>span{
+    font-size: 18px;
+    line-height: 21.6px;
+    font-weight: 700;
+}
+.ideal-all{
+    font-size: 18px;
+    line-height: 21.6px;
+    font-weight: 400;
+    margin-top: 8px;
+     /* border-bottom: 1px solid #E5E5E5; */
+     padding-bottom: 26px;
+
+}
+.bacored{
+    background-color: red;
+}
+.unSelect{
+    text-decoration: underline;
+    color:#777575;
+    padding-bottom: 26px;
+}
+
+#filter >div>span:nth-child(2){
+     font-weight: 400;
+     margin-top: 8px;
+     border-bottom: 1px solid #E5E5E5;
+     padding-bottom: 26px;
+}
+.catagory-type{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.txt:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+.width75 {
+    width: calc(100% - 500px); /* Reduces width of product section when filter is expanded */
+    margin-left: 15px;
+    grid-template-columns: repeat(3, 1fr); /* Reduce columns when filter is open */
+    gap: 20px;
+}
+.body-content {
+    display: flex; /* Keeps filter and products side by side */
+    justify-content: space-between; /* Ensures space between filters and products */
+    position: relative;
+}
+.catagory-type > span{
+    padding-bottom: 26px;
+}
+.catagory-type > span > span{
+    font-size: 16px;
+    line-height: 19.2px;
+    color :#252020;
+}
+.type{
+    border-bottom: 1px solid #E5E5E5;
+}
+.qty{
+    font-weight: 700;
+}
+.hidefilter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:5px
+}
+.ico img{
+    rotate:180deg
+}
+.zind2{
+    z-index: 2;
+}
+.rotate270deg{
+    rotate:270deg
+}
+.rotate90deg{
+    rotate:90deg
+}
+
+/* css media query */
+/* for tablet */
+@media(max-width: 900px) {
+    .filter {
+        margin-top: -99px;
+    }
+
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .width75 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    #select {
+        font-size: 15px;
+    }
+}
+
+@media(max-width:768px){
+    .card {
+        width: 140px !important; /* Updated width for better fit */
+        height: 200px; /* Adjusted height for consistency */
+    }
+    .card > img {
+        width: 140px; /* Adjusted image width */
+        height: auto; /* Set to auto for better aspect ratio */
+    }
+    #filter {
+        width: 100%; /* Set to full width for better visibility */
+        position: fixed; /* Changed to fixed for better access */
+        top: 0; /* Align to top */
+        left: 0; /* Align to left */
+        z-index: 9999; /* Ensure it is above other elements */
+        padding: 10px; /* Added padding for spacing */
+    }
+    .customize > span, .type-heading > span, #filter > div > span {
+        font-size: 16px; /* Increased font size for readability */
+        line-height: 20px; /* Increased line height for spacing */
+        font-weight: 700;
+    }
+    .filter {
+        width: 100%; /* Ensure full width for filter */
+        height: auto; /* Changed to auto for responsiveness */
+        display: none; /* Initially hidden */
+    }
+    .showfilter {
+        display: flex; /* Display filter when toggled */
+    }
+    .products {
+        grid-template-columns: repeat(2, 1fr); /* Ensure two columns */
+        margin: 0 16px; /* Added margin for spacing */
+    }
+    .filterlogo, .sort {
+        display: flex;
+        width: 50%; /* Set to 50% for both */
+        justify-content: center;
+        align-items: center;
+        font-size: 16px; /* Increased font size */
+        line-height: 20px; /* Increased line height for spacing */
+    }
+    .footer-bottom-left {
+        width: 100%; /* Full width for footer */
+        display: flex;
+        flex-direction: column;
+    }
+}
